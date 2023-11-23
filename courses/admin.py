@@ -13,7 +13,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Course)
 class CourseAdmin(admin.ModelAdmin):
-    list_display = ('title', 'description', 'category')
+    list_display = ('title', 'owner', 'url', 'category', 'teaching', 'description')
 
 
 @admin.register(User)

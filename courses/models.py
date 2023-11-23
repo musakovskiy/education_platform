@@ -16,11 +16,14 @@ class Category(models.Model):
 
 class Course(models.Model):
     title = models.CharField(max_length=255)
-    description = models.TextField()
+    owner = models.CharField(max_length=255)
+    url = models.URLField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    teaching = models.CharField(max_length=255)
+    description = models.TextField()
 
     class Meta:
-        ordering = ["title"]  # Додано сортування по імені курсу
+        ordering = ["title"]
         verbose_name = "Курс"
         verbose_name_plural = "Курси"
 
