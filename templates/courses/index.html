@@ -1,0 +1,30 @@
+
+  <h1>Доброго дня вас вітає платформа  курсів</h1>
+  <p>This site provides information about our taxi service.</p>
+
+  <p>Statistics:</p>
+  <ul>
+    <li>Number of Users: {{ num_users }}</li>
+    <li>Number of Courses: {{ num_courses }}</li>
+  </ul>
+
+  <h2>Categories:</h2>
+  <ul>
+    {% for category in categories %}
+      <li>{{ category.name }}</li>
+    {% endfor %}
+  </ul>
+
+  <h2>Courses:</h2>
+  <ul>
+    {% for course in courses %}
+      <li>{{ course.title }} - {{ course.description }}</li>
+    {% endfor %}
+  </ul>
+
+  {% if user.is_authenticated %}
+    <p>Welcome, {{ user.username }}! You are already logged in. <a href="{% url 'logout' %}">Logout</a></p>
+  {% else %}
+    <a href="{% url 'login' %}">Login</a>
+  {% endif %}
+
