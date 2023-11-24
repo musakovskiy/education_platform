@@ -18,9 +18,44 @@
         .product_box {
             text-align: center;
         }
+
+        #top_left_block {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        /* Style for the login and register buttons */
+        .button {
+            display: inline-block;
+            padding: 8px 12px;
+            margin-right: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
+
+<div id="top_left_block">
+    {% if user.is_authenticated %}
+        <p>Welcome, {{ user.username }}! <a href="{% url 'logout' %}" class="button">Logout</a></p>
+    {% else %}
+        <a href="{% url 'login' %}" class="button">Login</a>
+        <a href="{% url 'courses:register' %}" class="button">Register</a>
+    {% endif %}
+
+    <!-- Display information about the number of user categories and courses -->
+    <p>Number of User Categories: {{ num_user_categories }}</p>
+    <p>Number of Courses: {{ num_courses }}</p>
+</div>
+
 
 <div id="templatemo_site_title_bar_wrapper">
 
@@ -68,19 +103,12 @@
             <p>Etiam molestie massa nec nulla sagittis et luctus nulla.</p>
         </div>
 
-<<<<<<< HEAD
         <div class="product_box">
             <div class="thumb_wrapper"><a href="work_detail.html"><img src="{% static 'images/templatemo_image_02.jpg' %}" alt="image 2" /></a></div>
             <h3>Project Two</h3>
             <p>Aenean aliquam ullamcorper metus, at cursus elit sodales.</p>
         </div>
-=======
-  {% if user.is_authenticated %}
-  <p>Welcome, {{ user.username }}! You are already logged in. <a href="{% url 'logout' %}">Logout</a></p>
-{% else %}
-  <a href="{% url 'login' %}">Login</a> | <a href="{% url 'courses:register' %}">Register</a>
-{% endif %}
->>>>>>> origin/main
+
 
         <div class="product_box">
             <div class="thumb_wrapper"><a href="work_detail.html"><img src="{% static 'images/templatemo_image_03.jpg' %}" alt="image 3" /></a></div>
