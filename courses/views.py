@@ -12,12 +12,15 @@ from django.contrib.auth import login
 
 def index(request):
     num_users = User.objects.count()
-
     num_courses = Course.objects.count()
+
+    # Fetch all categories from the database
+    categories = Category.objects.all()
 
     context = {
         'num_users': num_users,
         'num_courses': num_courses,
+        'categories': categories,  # Add this line to include categories in the context
     }
 
     return render(request, 'courses/index.html', context=context)
