@@ -29,7 +29,6 @@
             border-radius: 5px;
         }
 
-        /* Style for the login and register buttons */
         .button {
             display: inline-block;
             padding: 8px 12px;
@@ -51,11 +50,11 @@
         <a href="{% url 'courses:register' %}" class="button">Register</a>
     {% endif %}
 
-    <!-- Display information about the number of user categories and courses -->
-    <p>Number of User Categories: {{ num_user_categories }}</p>
+    <!-- Display information about the number of registered users, categories, and courses -->
+    <p>Registered Users: {{ num_users }}</p>
+    <p>Number of Categories: {{ num_categories }}</p>
     <p>Number of Courses: {{ num_courses }}</p>
 </div>
-
 
 <div id="templatemo_site_title_bar_wrapper">
 
@@ -102,6 +101,7 @@
             <h3>Project One</h3>
             <p>Etiam molestie massa nec nulla sagittis et luctus nulla.</p>
         </div>
+
 
         <div class="product_box">
             <div class="thumb_wrapper"><a href="work_detail.html"><img src="{% static 'images/templatemo_image_02.jpg' %}" alt="image 2" /></a></div>
@@ -207,4 +207,3 @@ http://www.templatemo.com/preview/templatemo_227_portfolio
 -->
 </body>
 </html>
- створити для кнопок логін.логаут та реєстрація блок в лівому верхноьму куті в цей блок додати перелік категорій юзерів та курсів
