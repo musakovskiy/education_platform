@@ -11,8 +11,8 @@
 
 
   {% if user.is_authenticated %}
-    <p>Welcome, {{ user.username }}! You are already logged in. <a href="{% url 'logout' %}">Logout</a></p>
-  {% else %}
-    <a href="{% url 'login' %}">Login</a>
-  {% endif %}
+  <p>Welcome, {{ user.username }}! You are already logged in. <a href="{% url 'logout' %}">Logout</a></p>
+{% else %}
+  <a href="{% url 'login' %}">Login</a> | <a href="{% url 'courses:register' %}">Register</a>
+{% endif %}
 

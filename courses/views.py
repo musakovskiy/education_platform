@@ -5,10 +5,11 @@ from django.urls import reverse_lazy
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Category, Course, User
-from .forms import CourseForm
+from .forms import CourseForm, UserCreateForm
+from django.shortcuts import redirect
+from django.contrib.auth import login
 
 
-@login_required
 def index(request):
     num_users = User.objects.count()
 
@@ -70,3 +71,16 @@ class CourseUpdateView(LoginRequiredMixin, generic.UpdateView):
 class CourseDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Course
     success_url = reverse_lazy('courses:course-list')
+
+
+class UserCreateView(generic.CreateView):
+    form_class = UserCreateForm
+    template_name = 'registration/register.html'
+    success_url = '/'  # Make sure this is the correct URL
+
+    def form_valid(self, form):
+        print("Form is valid")
+        response = super().form_valid(form)
+        login(self.request, self.object)  # Log in the user
+        print("User logged in")
+        return response
