@@ -1,10 +1,10 @@
 {% load static %}
 
-<!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Information Platform for Extra Education</title>
+    <title>Information Platform </title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <link href="{% static 'css/templatemo_style.css' %}" rel="stylesheet" type="text/css" />
@@ -42,14 +42,14 @@
 
         .ad-container {
             display: grid;
-            grid-template-columns: repeat(4, 8cm); /* Adjusted to have 8 squares */
+            grid-template-columns: repeat(3, 13cm); /* Adjusted width to 13cm */
             gap: 20px;
             margin-top: 20px;
         }
 
         .ad-square {
-            width: 8cm;
-            height: 8cm;
+            width: 13cm; /* Adjusted width to 13cm */
+            height: 8cm; /* Adjusted height to 8cm */
             background-color: rgba(255, 255, 255, 0.8);
             border: 1px solid #ddd;
             border-radius: 10px;
@@ -89,7 +89,7 @@
     <div id="header">
         <h1>Інформаційно навчальна платформа</h1>
         <h2>швидка реєстрація не потрібно мобільного телефона та адреси електронної пошти</h2>
-        <a href="{% url 'courses:category-list' %}" class="button">Explore Courses</a>
+        <a href="{% url 'courses:category-list' %}" class="button">Клік для продовження </a>
     </div>
 
     <div id="top_right_block">
@@ -105,7 +105,6 @@
     </div>
 
     <div id="main-content">
-        <h2>Advertisement</h2>
         <div class="ad-container">
             <div class="ad-square">
                 <img src="path/to/ad-image1.jpg" alt="Advertisement 1" class="ad-image">
@@ -129,14 +128,6 @@
             </div>
             <div class="ad-square">
                 <img src="path/to/ad-image6.jpg" alt="Advertisement 6" class="ad-image">
-                <div class="circle"></div>
-            </div>
-            <div class="ad-square">
-                <img src="path/to/ad-image7.jpg" alt="Advertisement 7" class="ad-image">
-                <div class="circle"></div>
-            </div>
-            <div class="ad-square">
-                <img src="path/to/ad-image8.jpg" alt="Advertisement 8" class="ad-image">
                 <div class="circle"></div>
             </div>
         </div>

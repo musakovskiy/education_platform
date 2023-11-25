@@ -1,36 +1,72 @@
 <!-- category_detail.html -->
 
 <style>
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+  }
+
+  .category-container {
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .category-header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+  }
+
   .course-container {
-    margin-bottom: 20px; /* Adjust as needed */
+    margin-bottom: 20px;
   }
 
   .course-box {
-    border: 2px solid #333; /* Border color and thickness */
-    padding: 10px; /* Adjust as needed */
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 0;
+    background-color: #fff;
   }
 
   .back-button {
-    margin-top: 20px; /* Adjust as needed */
+    margin-top: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
   }
 </style>
 
-<h1>{{ category.name }}</h1>
-<!-- Add other Category fields as needed -->
-
-{% for course in object.course_set.all %}
-  <div class="course-container">
-    <div class="course-box">
-      <h3>{{ course.title }}</h3>
-      <p>Назва компанії: {{ course.owner }}</p>
-      <p>Тип навчання: {{ course.teaching }}</p>
-      <p>Опис: {{ course.description }}</p>
-      <p>Перехід на сторінку курсів: <a href="{{ course.url }}" target="_blank">{{ course.url }}</a></p>
-      <!-- Add other Course fields as needed -->
-    </div>
+<div class="category-container">
+  <div class="category-header">
+    <h1>{{ category.name }}</h1>
+    <!-- Add other Category fields as needed -->
   </div>
-  <hr>
-{% endfor %}
 
-<!-- Back to Category List button -->
-<a class="btn btn-primary back-button" href="{% url 'courses:category-list' %}">Back to Category List</a>
+  {% for course in object.course_set.all %}
+    <div class="course-container">
+      <div class="course-box">
+        <h3>{{ course.title }}</h3>
+        <p>Назва компанії: {{ course.owner }}</p>
+        <p>Тип навчання: {{ course.teaching }}</p>
+        <p>Опис: {{ course.description }}</p>
+        <p>Перехід на сторінку курсів: <a href="{{ course.url }}" target="_blank">{{ course.url }}</a></p>
+        <!-- Add other Course fields as needed -->
+      </div>
+    </div>
+    <hr>
+  {% endfor %}
+
+  <!-- Back to Category List button -->
+  <a class="back-button" href="{% url 'courses:category-list' %}">Back to Category List</a>
+</div>
