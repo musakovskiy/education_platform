@@ -26,14 +26,40 @@
 
   .course-container {
     margin-bottom: 20px;
+    /* Updated style to display flex */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 
+  /* Updated style for course-box */
   .course-box {
     border: 2px solid #333;
     border-radius: 10px;
     padding: 20px;
     margin: 10px 0;
     background-color: #fff;
+    /* Updated size to 10cm by 10cm */
+    width: 10cm;
+    height: 10cm;
+    overflow: hidden; /* Hide overflow content */
+    position: relative; /* Set position relative for absolute positioning */
+  }
+
+  .course-box h3, .course-box p {
+    margin: 0; /* Remove margin for better layout */
+  }
+
+  .course-link-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
   }
 
   .back-button {
@@ -53,19 +79,18 @@
     <!-- Add other Category fields as needed -->
   </div>
 
-  {% for course in object.course_set.all %}
-    <div class="course-container">
+  <div class="course-container">
+    {% for course in object.course_set.all %}
       <div class="course-box">
         <h3>{{ course.title }}</h3>
         <p>Назва компанії: {{ course.owner }}</p>
         <p>Тип навчання: {{ course.teaching }}</p>
         <p>Опис: {{ course.description }}</p>
-        <p>Перехід на сторінку курсів: <a href="{{ course.url }}" target="_blank">{{ course.url }}</a></p>
         <!-- Add other Course fields as needed -->
+        <a class="course-link-button" href="{{ course.url }}" target="_blank">Курс детальніше</a>
       </div>
-    </div>
-    <hr>
-  {% endfor %}
+    {% endfor %}
+  </div>
 
   <!-- Back to Category List button -->
   <a class="back-button" href="{% url 'courses:category-list' %}">Back to Category List</a>
