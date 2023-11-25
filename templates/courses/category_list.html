@@ -28,28 +28,30 @@
 
     li {
       background-color: #fff;
-      border: 2px solid #ddd;
-      border-radius: 8px;
       margin: 10px;
-      padding: 20px;
-      width: 300px;
+      padding: 60px; /* Adjusted padding to increase size */
+      width: 900px; /* Adjusted width to increase size */
       text-align: center;
       position: relative;
       overflow: hidden;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s, background-color 0.3s; /* Додали анімацію для зміни форми та кольору при наведенні миші */
+      transition: transform 0.3s, background-color 0.3s, border 0.3s;
+      border: 3px solid #ddd; /* Adjusted border size */
+      border-radius: 24px; /* Adjusted border-radius to maintain octagon shape */
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     }
 
     li:hover {
       transform: scale(1.05);
-      background-color: #f0f0f0; /* Змінюємо кольору при наведенні */
+      background: linear-gradient(to bottom, #f4f4f4, #e0e0e0);
+      border: 3px solid #aaa;
     }
 
     a {
       text-decoration: none;
       color: #333;
       font-weight: bold;
-      font-size: 18px;
+      font-size: 54px; /* Adjusted font-size */
     }
 
     .pagination {
@@ -59,26 +61,26 @@
     }
 
     .step-links a {
-      padding: 10px;
-      margin: 0 5px;
+      padding: 30px; /* Adjusted padding */
+      margin: 0 15px; /* Adjusted margin */
       background-color: #333;
       color: #fff;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 15px; /* Adjusted border-radius */
     }
 
     .step-links .current {
       background-color: #555;
       color: #fff;
-      padding: 10px;
-      margin: 0 5px;
-      border-radius: 5px;
+      padding: 30px; /* Adjusted padding */
+      margin: 0 15px; /* Adjusted margin */
+      border-radius: 15px; /* Adjusted border-radius */
     }
   </style>
 </head>
 <body>
 
-  <h1>Category List</h1>
+  <h1>Список категорій для навчання</h1>
 
   <ul>
     {% for category in category_list %}
