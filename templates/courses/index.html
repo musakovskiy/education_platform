@@ -42,7 +42,7 @@
 </head>
 <body>
 
-<div id="top_left_block">
+<div id="top_right_block">
     {% if user.is_authenticated %}
         <p>Welcome, {{ user.username }}! <a href="{% url 'logout' %}" class="button">Logout</a></p>
     {% else %}
@@ -52,7 +52,6 @@
 
     <!-- Display information about the number of registered users, categories, and courses -->
     <p>Registered Users: {{ num_users }}</p>
-    <p>Number of Categories: {{ num_categories }}</p>
     <p>Number of Courses: {{ num_courses }}</p>
 </div>
 

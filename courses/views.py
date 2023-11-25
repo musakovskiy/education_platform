@@ -87,3 +87,7 @@ class UserCreateView(generic.CreateView):
         login(self.request, self.object)  # Log in the user
         print("User logged in")
         return response
+
+
+class CategoryDetailView(LoginRequiredMixin, generic.DetailView):
+    model = Category

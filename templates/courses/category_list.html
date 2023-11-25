@@ -1,10 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<h1>Category List</h1>
 
-</body>
-</html>
+  <ul>
+    {% for category in category_list %}
+      <li><a href="{% url 'courses:category-detail' category.id %}">{{ category.name }}</a></li>
+    {% endfor %}
+  </ul>
+
+  {% if is_paginated %}
+    <div class="pagination">
+      <span class="step-links">
+        {% if category_list.has_previous %}
+          <a href="?page=1">&laquo; first</a>
+          <a href="?page={{ category_list.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+          Page {{ category_list.number }} of {{ category_list.paginator.num_pages }}.
+        </span>
+
+        {% if category_list.has_next %}
+          <a href="?page={{ category_list.next_page_number }}">next</a>
+          <a href="?page={{ category_list.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+      </span>
+    </div>
+  {% endif %}
