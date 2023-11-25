@@ -30,7 +30,6 @@ class CategoryListView(LoginRequiredMixin, generic.ListView):
     model = Category
     context_object_name = 'category_list'
     template_name = 'courses/category_list.html'
-    paginate_by = 5
 
 
 class CategoryCreateView(LoginRequiredMixin, generic.CreateView):
