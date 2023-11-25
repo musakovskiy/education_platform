@@ -54,6 +54,7 @@
   .course-box p {
     font-style: italic; /* Italicize description */
     color: #555; /* Adjust text color */
+    margin-bottom: 10px; /* Add margin between paragraphs */
   }
 
   .course-link-button {
@@ -91,11 +92,12 @@
     {% for course in object.course_set.all %}
       <div class="course-box">
         <h3>{{ course.title }}</h3>
-        <p>Назва компанії: {{ course.owner }}</p>
+        <br>
+          <p><strong>Назва компанії: {{ course.owner }}</strong></p>
         <p>Тип навчання: {{ course.teaching }}</p>
         <p>Опис: {{ course.description }}</p>
         <!-- Add other Course fields as needed -->
-        <a class="course-link-button" href="{{ course.url }}" target="_blank">Курс детальніше</a>
+        <a class="course-link-button" href="{{ course.url }}" target="_blank">Перехід на сторінку курсів </a>
       </div>
     {% endfor %}
   </div>
