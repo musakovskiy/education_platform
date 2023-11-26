@@ -1,137 +1,72 @@
-{% load static %}
+<!DOCTYPE html>
+<html lang="en">
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Information Platform </title>
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <link href="{% static 'css/templatemo_style.css' %}" rel="stylesheet" type="text/css" />
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: url('path/to/background-image.jpg') no-repeat center center fixed;
-            background-size: cover;
-        }
+  <title>info</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        #header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
 
-        #top_right_block {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        #main-content {
-            text-align: center;
-            padding: 50px;
-            color: #fff;
-        }
-
-        .ad-container {
-            display: grid;
-            grid-template-columns: repeat(3, 13cm); /* Adjusted width to 13cm */
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .ad-square {
-            width: 13cm; /* Adjusted width to 13cm */
-            height: 8cm; /* Adjusted height to 8cm */
-            background-color: rgba(255, 255, 255, 0.8);
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .ad-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .circle {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            width: 30px;
-            height: 30px;
-            background-color: #4CAF50;
-            border-radius: 50%;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 8px 12px;
-            margin-right: 10px;
-            background-color: #4CAF50;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-    </style>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-
-    <div id="header">
-        <h1>Інформаційно навчальна платформа</h1>
-        <h2>швидка реєстрація не потрібно мобільного телефона та адреси електронної пошти</h2>
-        <a href="{% url 'courses:category-list' %}" class="button">Клік для продовження </a>
-    </div>
-
-    <div id="top_right_block">
-        {% if user.is_authenticated %}
-            <p>Welcome, {{ user.username }}! <a href="{% url 'logout' %}" class="button">Logout</a></p>
-        {% else %}
-            <a href="{% url 'login' %}" class="button">Login</a>
-            <a href="{% url 'courses:register' %}" class="button">Register</a>
-        {% endif %}
-
-        <p>Кількість користувачів: {{ num_users }}</p>
-        <p>Кількість курсів: {{ num_courses }}</p>
-    </div>
-
-    <div id="main-content">
-        <div class="ad-container">
-            <div class="ad-square">
-                <img src="path/to/ad-image1.jpg" alt="Advertisement 1" class="ad-image">
-                <div class="circle"></div>
-            </div>
-            <div class="ad-square">
-                <img src="path/to/ad-image2.jpg" alt="Advertisement 2" class="ad-image">
-                <div class="circle"></div>
-            </div>
-            <div class="ad-square">
-                <img src="path/to/ad-image3.jpg" alt="Advertisement 3" class="ad-image">
-                <div class="circle"></div>
-            </div>
-            <div class="ad-square">
-                <img src="path/to/ad-image4.jpg" alt="Advertisement 4" class="ad-image">
-                <div class="circle"></div>
-            </div>
-            <div class="ad-square">
-                <img src="path/to/ad-image5.jpg" alt="Advertisement 5" class="ad-image">
-                <div class="circle"></div>
-            </div>
-            <div class="ad-square">
-                <img src="path/to/ad-image6.jpg" alt="Advertisement 6" class="ad-image">
-                <div class="circle"></div>
-            </div>
+  <div class="main">
+    <div class="headerbg">
+      <div class="logo_area">
+        <p class="logoicon"><a href="#"><img src="{% static 'images/logoicon.jpg' %}" alt="" border="0" /></a></p>
+        <p>created by Musakovskiy Olexandr</p>
+      </div>
+      <div class="navarea">
+        <div class="menu">
+          <ul>
+            <li><a href="#" class="homeactive"></a></li>
+            <li><a href="#" class="service"></a></li>
+            <li><a href="#" class="clients"></a></li>
+            <li><a href="#" class="contact"></a></li>
+          </ul>
         </div>
+      </div>
+      <div class="improve_text">Безкоштовна Інформаційно  <span class="white_text"></span><br />
+        Освітня Платформа</div>
+
     </div>
 
+  <div class="bodybg">
+    <div class="welcometext_area">
+      <p class="welcome_text">Найбільший каталог онлайн та офлайн курсів для навчання </p>
+      <br>
+      <p class="bluetext">Швидка та безкоштовна реєстрація</p>
+    </div>
+    <p class="contenttext">На цій платформі ми зібрали посилання на найкращі курси за допомогою яких користувачі змогли здобути основну та додаткову освіту для пошуку кращої та високоплачуваної роботи</p>
+    <div class="stategies_area">
+      <p class="stategy_icon"><img src="images/icon1.jpg" alt="" width="140" height="140" /></p>
+      <p class="stategy_text">Мета створення платформи</p>
+      <div class="selectarea">
+        <p><a class="select">Допомога людям які втратили роботу </a><a class="select">Розширення клієнтскьої бази у викладачів курсу</a><a class="select">Отримання додаткової освіти</a><a class="select">Економія часу шукачів потрібних курсів</a></p>
+      </div>
+    </div>
+    <div class="testimonial_area">
+      <p class="testitext">Статистика Платформи</p>
+      <div class="clienttesti_area">
+        <div class="testimonials1">
+          <p class="testicontent">Кількість зареєстрованих користувачів: </p>
+          <div class="clent_area">
+            <p class="clientname">Число</p>
+          </div>
+        </div>
+        <div class="testimonials2">
+          <p class="testicontent">Кількість посилань на курси</p>
+          <div class="clent_area">
+            <p class="clientname">Число</p>
+          </div>
+        </div>
+      </div>
+      <div class="more_area">
+        <p class="morebutton"><a href="#"><img src="images/morebtn.jpg" alt="" border="0" /></a></p>
+
+      </div>
+
+</div>
 </body>
 </html>

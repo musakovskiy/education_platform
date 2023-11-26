@@ -1,0 +1,342 @@
+.spacer {
+	line-height:0;
+	font-size:0;
+	clear:both;
+}
+div, h1, h2, h3, h4, span, ul, li, p, a, textarea, input, lable, img, form {
+	margin:0;
+	padding:0;
+}
+body {
+	background:#e7e7e7 url(../images/backbg.jpg) 0 0 repeat-x;
+	font:normal 11px/18px Tahoma, Arial, Helvetica, sans-serif;
+	width:100%;
+	margin:0;
+	padding:0;
+}
+/*---------------Main Css----------------*/
+
+.main {
+	width:850px;
+	margin:0 auto;
+}
+/*---------------Header Area Css---------------*/
+
+.headerbg {
+	background:url(../images/headerbg.jpg) 0 0 no-repeat;
+	width:850px;
+	height:434px;
+	float:left;
+}
+.logo_area {
+	width:384px;
+	height:149px;
+	float:left;
+	padding:20px 0 0 23px;
+}
+.logoicon {
+	width:114px;
+	height:149px;
+	float:left;
+}
+.logo {
+	width:270px;
+	height:25px;
+	float:left;
+	margin-top:31px;
+}
+/*---------------Navigation Css----------------*/
+
+.navarea {
+	width:236px;
+	padding:0 0 0 179px;
+	float:left;
+	height:98px;
+}
+.menu ul {
+	margin:0;
+	padding:0;
+	list-style:none;
+	float:left;
+}
+.menu li {
+	margin:0;
+	padding:0;
+	float:left;
+}
+a.home:link, a.home:visited {
+	width:50px;
+	height:98px;
+	float:left;
+	margin-right:9px;
+	background:url(../images/home_nor.jpg) 0 0 no-repeat;
+}
+a.home:hover, a.homeactive {
+	width:50px;
+	height:98px;
+	float:left;
+	margin-right:9px;
+	background:url(../images/homehover.jpg) 0 0 no-repeat;
+	;
+}
+a.service:link, a.service:visited {
+	width:50px;
+	height:98px;
+	float:left;
+	margin-right:9px;
+	background:url(../images/service_nor.jpg) 0 0 no-repeat;
+}
+a.service:hover, a.serviceactive {
+	width:50px;
+	height:98px;
+	float:left;
+	margin-right:9px;
+	background:url(../images/service_hover.jpg) 0 0 no-repeat;
+	;
+}
+a.clients:link, a.clients:visited {
+	width:50px;
+	height:98px;
+	float:left;
+	margin-right:9px;
+	background:url(../images/client_nor.jpg) 0 0 no-repeat;
+}
+a.clients:hover, a.clientsactive {
+	width:50px;
+	height:98px;
+	float:left;
+	margin-right:9px;
+	background:url(../images/client_hover.jpg) 0 0 no-repeat;
+	;
+}
+a.contact:link, a.contact:visited {
+	width:50px;
+	height:98px;
+	float:left;
+	margin-right:9px;
+	background:url(../images/contact_nor.jpg) 0 0 no-repeat;
+}
+a.contact:hover, a.contactactive {
+	width:50px;
+	height:98px;
+	float:left;
+	margin-right:9px;
+	background:url(../images/contact_hover.jpg) 0 0 no-repeat;
+	;
+}
+.improve_text {
+	font:bold 38px/34px Helvetica, Arial, sans-serif;
+	float:left;
+	color:#94ff80;
+	width:538px;
+	padding:17px 0 0 48px;
+	text-transform:uppercase;
+	margin-bottom:30px;
+}
+.white_text {
+	color:#fff;
+	font-size:30px;
+	font-weight:normal;
+}
+.twitter_area {
+	width:446px;
+	height:91px;
+	float:left;
+	padding-left:84px;
+}
+.twitter {
+	background:url(../images/twitterbg.jpg) 0 0 no-repeat;
+	width:446px;
+	height:91px;
+	padding-left:112px;
+	font:bold 30px Arial, Helvetica, sans-serif;
+	color:#00374b;
+}
+/*---------------Body Content Area css---------------*/
+
+.bodybg {
+	background:url(../images/bodybg.jpg) 0 0 no-repeat;
+	width:850px;
+	float:left;
+}
+.welcometext_area {
+	width:430px;
+	float:left;
+	padding:22px 0 10px 99px;
+}
+.welcome_text {
+	font:normal 40px Georgia, "Times New Roman", Times, serif;
+	color:#fff;
+}
+.bluetext {
+	font:normal 30px/25px Georgia, "Times New Roman", Times, serif;
+	color:#00374b;
+}
+.contenttext {
+	width:800px;
+	float:left;
+	color:#fff;
+	font:normal 11px/18px Tahoma, Arial, Helvetica, sans-serif;
+	padding-left:23px;
+	padding-bottom:10px;
+}
+.stategies_area {
+	width:780px;
+	float:left;
+	padding:0 0 0 37px;
+}
+.stategy_icon {
+	width:140px;
+	height:140px;
+	float:left;
+}
+.stategy_text {
+	font: normal 28px/40px Georgia, "Times New Roman", Times, serif;
+	color:#fff;
+	float:left;
+	width:380px;
+	padding-left:24px;
+}
+.selectarea {
+	width:570px;
+	float:left;
+}
+a.select {
+	font:bold 11px Tahoma, Arial, Helvetica, sans-serif;
+	line-height:20px;
+	color:#23242b;
+	display:block;
+	text-decoration:none;
+	padding-left:28px;
+	background:url(../images/bullet.png) +10px +7px no-repeat;
+}
+a.select:hover {
+	font:bold 11px Tahoma, Arial, Helvetica, sans-serif;
+	line-height:20px;
+	color:#f30000;
+	display:block;
+	text-decoration:none;
+	padding-left:28px;
+}
+.testimonial_area {
+	width:812px;
+	padding:30px 0 0 15px;
+	float:left;
+}
+.testitext {
+	font:normal 28px/32px Georgia, "Times New Roman", Times, serif;
+	color:#00374b;
+	width:500px;
+	float:left;
+}
+.clienttesti_area {
+	width:790px;
+	float:left;
+	padding:10px 0 0 17px;
+}
+.testimonials1 {
+	background:url(../images/testibg1.jpg) 0 0 no-repeat;
+	width:362px;
+	height:122px;
+	float:left;
+	margin-right:65px;
+}
+.testimonials2 {
+	background:url(../images/testibg2.jpg) 0 0 no-repeat;
+	width:362px;
+	height:122px;
+	float:left;
+}
+.testicontent {
+	width:270px;
+	float:left;
+	color:#0a0a0a;
+	padding:34px 0 0 90px;
+	font:normal 11px/18px Tahoma, Arial, Helvetica, sans-serif;
+}
+.clent_area {
+	width:132px;
+	float:right;
+	padding:18px 20px 20px 0;
+}
+.clientname {
+	color:#0188b9;
+	font:italic 14px/18px Georgia, "Times New Roman", Times, serif;
+}
+.more_area {
+	width:180px;
+	float:left;
+	padding:10px 0 0 22px;
+}
+.morebutton {
+	width:98px;
+	height:37px;
+	float:left;
+}
+.testimonialtext {
+	width:80px;
+	height:30px;
+	color:#00435b;
+	float:left;
+	font:bold 12px/30px Tahoma, Arial, Helvetica, sans-serif;
+}
+/*--------------- Footer Area css ---------------*/
+
+.footerback {
+	background:url(../images/footerbg.jpg) 0 0 repeat-x;
+	width:100%;
+	height:125px;
+	float:left;
+	margin-top:16px;
+}
+.footermain {
+	width:540px;
+	margin:0 auto;
+	height:50px;
+	color:#0581ad;
+	font:bold 11px/50px Tahoma, Arial, Helvetica, sans-serif;
+	text-align:center;
+}
+a.navf:link, a.navf:visited {
+	color:#0581ad;
+	text-decoration:none;
+	padding:0 12px 0 12px;
+}
+a.navf:hover, a.navfactive {
+	color:#003b51;
+	text-decoration:none;
+	padding:0 12px 0 12px;
+}
+.twitterbtn_area {
+	width:134px;
+	height:31px;
+	float:right;
+	padding:24px 150px 0 0;
+}
+a.twitterbtn:link, a.twitterbtn:visited {
+	background:url(../images/twibutton_nor.jpg) 0 0 no-repeat;
+	width:134px;
+	height:31px;
+	text-decoration:none;
+	color:#0342a3;
+	font:normal 11px/28px Tahoma, Arial, Helvetica, sans-serif;
+	text-align:center;
+	display:block;
+}
+a.twitterbtn:hover {
+	background:url(../images/twibutton_hover.jpg) 0 0 no-repeat;
+	width:134px;
+	height:31px;
+	text-decoration:none;
+	color:#ff4000;
+	text-align:center;
+	display:block;
+}
+.copyright {
+	float:left;
+	padding-top:24px;
+}
+.copyright a {
+	text-decoration:none;
+	color:#000;
+}
