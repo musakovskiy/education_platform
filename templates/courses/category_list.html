@@ -1,116 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Category List</title>
+  <title>Categories</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/category.css' %}">
   <style>
     body {
       font-family: 'Arial', sans-serif;
-      background-color: #f2f2f2;
       margin: 0;
       padding: 0;
+      background-color: #f0f0f0;
     }
 
-    h1 {
-      background-color: #333;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
+    .card-container {
       display: flex;
-      flex-wrap: wrap;
+      gap: 20px;
       justify-content: space-around;
-    }
-
-    li {
-      background-color: #fff;
-      margin: 10px;
+      flex-wrap: wrap;
       padding: 20px;
-      width: 300px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s, background-color 0.3s, border 0.3s;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    }
-
-    li:hover {
-      transform: scale(1.05);
-      background: linear-gradient(to bottom, #f4f4f4, #e0e0e0);
-      border: 1px solid #aaa;
-    }
-
-    a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-      font-size: 18px;
-    }
-
-    .pagination {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-    }
-
-    .step-links a {
-      padding: 10px;
-      margin: 0 5px;
-      background-color: #333;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-
-    .step-links .current {
-      background-color: #555;
-      color: #fff;
-      padding: 10px;
-      margin: 0 5px;
-      border-radius: 5px;
     }
   </style>
 </head>
+
 <body>
 
-  <h1>Список категорій для навчання</h1>
-
-  <ul>
+  <div class="card-container">
     {% for category in category_list %}
-      <li>
-        <a href="{% url 'courses:category-detail' category.id %}">
-          {{ category.name }}
-        </a>
-      </li>
+      <div class="card">
+        <div class="top-section">
+          <div class="border"></div>
+          <div class="icons">
+            <div class="logo">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 94 94" class="svg">
+                <!-- Your logo path data -->
+              </svg>
+            </div>
+            <div class="social-media">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" class="svg">
+                <!-- Your social media icon path data -->
+              </svg>
+              <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <!-- Your social media icon path data -->
+              </svg>
+              <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                <!-- Your social media icon path data -->
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="bottom-section">
+          <span class="title">{{ category.name }}</span>
+          <div class="row row1">
+            <div class="item">
+              <span class="big-text">2626</span>
+              <span class="regular-text">UI elements</span>
+            </div>
+            <div class="item">
+              <span class="big-text">100%</span>
+              <span class="regular-text">Free for use</span>
+            </div>
+            <div class="item">
+              <span class="big-text">38,631</span>
+              <span class="regular-text">Contributors</span>
+            </div>
+          </div>
+        </div>
+      </div>
     {% endfor %}
-  </ul>
-
-  {% if is_paginated %}
-    <div class="pagination">
-      <span class="step-links">
-        {% if category_list.has_previous %}
-          <a href="?page=1">&laquo; first</a>
-          <a href="?page={{ category_list.previous_page_number }}">previous</a>
-        {% endif %}
-
-        <span class="current">
-          Page {{ category_list.number }} of {{ category_list.paginator.num_pages }}.
-        </span>
-
-        {% if category_list.has_next %}
-          <a href="?page={{ category_list.next_page_number }}">next</a>
-          <a href="?page={{ category_list.paginator.num_pages }}">last &raquo;</a>
-        {% endif %}
-      </span>
-    </div>
-  {% endif %}
+  </div>
 
 </body>
+
 </html>
