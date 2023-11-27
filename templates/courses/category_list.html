@@ -7,10 +7,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% load static %}
   <link rel="stylesheet" href="{% static 'css/category.css' %}">
-  <link rel="stylesheet" href="{% static 'css/categorylist.css' %}">
+  <link rel="stylesheet" href="{% static 'css/categorylisttitle.css' %}">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #3494e6, #ec6ead); /* Adjust gradient colors as needed */
+      color: #fff; /* Adjust the text color based on your background */
+    }
 
+    h1 {
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px;
+      background: linear-gradient(to right, #3494e6, #ec6ead); /* Same gradient as the body */
+      border-radius: 10px;
+    }
+
+    .card-container {
+      display: flex;
+      gap: 20px;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+  </style>
 </head>
 
+<body>
+  <h1>Список категорій курсів</h1>
+<br>
+<br>
+<br>
 <body>
 
   <div class="card-container">
@@ -57,7 +86,6 @@
         </div>
       </div>
     {% endfor %}
-
   </div>
 
 </body>
