@@ -7,22 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% load static %}
   <link rel="stylesheet" href="{% static 'css/category.css' %}">
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f0f0f0;
-    }
+  <link rel="stylesheet" href="{% static 'css/categorylist.css' %}">
 
-    .card-container {
-      display: flex;
-      gap: 20px;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      padding: 20px;
-    }
-  </style>
 </head>
 
 <body>
@@ -71,6 +57,7 @@
         </div>
       </div>
     {% endfor %}
+
   </div>
 
 </body>
