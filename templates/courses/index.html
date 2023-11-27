@@ -1,77 +1,77 @@
+<!-- courses/templates/courses/index.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <title>info</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>info</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-  {% load static %}
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
+
 <body>
-  <div class="main">
-    <div class="headerbg">
-      <div class="logo_area">
-        <p class="logoicon"><a href="#"><img src="{% static 'images/logoicon.jpg' %}" alt="" border="0" /></a></p>
-        <p>created by Musakovskiy Olexandr</p>
-      </div>
-      <div class="navarea">
-        <div class="menu">
-          <ul>
-            <li><a href="#" class="homeactive"></a></li>
-            <li><a href="#" class="service"></a></li>
-            <li><a href="#" class="clients"></a></li>
-            <li><a href="#" class="contact"></a></li>
-          </ul>
+    <div class="main">
+        <div class="headerbg">
+            <div class="logo_area">
+                <p class="logoicon"><a href="#"><img src="{% static 'images/logoicon.jpg' %}" alt="" border="0" /></a></p>
+                <p>created by Musakovskiy Olexandr</p>
+            </div>
+
+            <div class="improve_text">Безкоштовна Інформаційно <span class="white_text"></span><br />
+                Освітня Платформа</div>
         </div>
-      </div>
-      <div class="improve_text">Безкоштовна Інформаційно  <span class="white_text"></span><br />
-        Освітня Платформа</div>
 
-    </div>
+        <div class="bodybg">
+            <div class="welcometext_area">
+                <p class="welcome_text">Найбільший каталог онлайн та офлайн курсів для навчання </p>
+                <br>
+                {% if user.is_authenticated %}
+                    <!-- Add the button for logged-in users -->
+                    <a href="{% url 'courses:category-list' %}" class="shadow__btn">список курсів</a>
+                    <a href="{% url 'logout' %}" class="shadow__btn">Вийти</a>
+                {% else %}
+                    <a href="{% url 'login' %}" class="shadow__btn">Увійти</a>
+                    <a href="{% url 'courses:register' %}" class="shadow__btn">Реєстрація</a>
+                {% endif %}
+                <br>
+                <br>
+                <p class="bluetext">Швидка та безкоштовна реєстрація</p>
+            </div>
+            <p class="contenttext">На цій платформі ми зібрали посилання на найкращі курси за допомогою яких користувачі
+                змогли здобути основну та додаткову освіту для пошуку кращої та високоплачуваної роботи</p>
+            <div class="stategies_area">
+                <p class="stategy_icon"><img src="static/images/490608167862864c93db54c966e883ce-3301252139.jpg" alt=""
+                        width="140" height="140" /></p>
+                <p class="stategy_text">Мета створення платформи</p>
 
-  <div class="bodybg">
-    <div class="welcometext_area">
-      <p class="welcome_text">Найбільший каталог онлайн та офлайн курсів для навчання </p>
-      <br>
-      <p class="bluetext">Швидка та безкоштовна реєстрація</p>
-    </div>
-    <p class="contenttext">На цій платформі ми зібрали посилання на найкращі курси за допомогою яких користувачі змогли здобути основну та додаткову освіту для пошуку кращої та високоплачуваної роботи</p>
-    <div class="stategies_area">
-      <p class="stategy_icon"><img src="static/images/490608167862864c93db54c966e883ce-3301252139.jpg" alt="" width="140" height="140" /></p>
-      <p class="stategy_text">Мета створення платформи</p>
-      <div class="selectarea">
-        <p><a class="select">Допомога людям які втратили роботу </a><a class="select">Розширення клієнтскьої бази у викладачів курсу</a><a class="select">Отримання додаткової освіти</a><a class="select">Економія часу шукачів потрібних курсів</a></p>
-      </div>
-    </div>
-    <div class="testimonial_area">
-      <p class="testitext">Статистика Платформи</p>
-      <div class="clienttesti_area">
-        <div class="testimonials1">
-          <p class="testicontent">Кількість зареєстрованих користувачів: </p>
-          <div class="clent_area">
-            <p class="clientname">{{ num_users }}</p>
-          </div>
+                <div class="selectarea">
+                    <p><a class="select">Допомога людям які втратили роботу </a><a class="select">Розширення клієнтскьої
+                            бази у викладачів курсу</a><a class="select">Отримання додаткової освіти</a><a
+                            class="select">Економія часу шукачів потрібних курсів</a></p>
+                </div>
+            </div>
+            <div class="testimonial_area">
+                <p class="testitext">Статистика Платформи</p>
+                <div class="clienttesti_area">
+                    <div class="testimonials1">
+                        <p class="testicontent">Кількість зареєстрованих користувачів: </p>
+                        <div class="clent_area">
+                            <p class="clientname">{{ num_users }}</p>
+                        </div>
+                    </div>
+                    <div class="testimonials2">
+                        <p class="testicontent">Кількість посилань на курси</p>
+                        <div class="clent_area">
+                            <p class="clientname">{{ num_courses }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="testimonials2">
-          <p class="testicontent">Кількість посилань на курси</p>
-          <div class="clent_area">
-            <p class="clientname">{{ num_courses }}</p>
-          </div>
-        </div>
-      </div>
-      <div class="more_area">
-        <p class="morebutton"><a href="#"><img src="static/images/morebtn.jpg" alt="" border="0" /></a></p>
-        <div class="more_area">
-        <p class="morebutton"><a href="#"><img src="static/images/morebtn.jpg" alt="" border="0" /></a></p>
-          <div class="more_area">
-        <p class="morebutton"><a href="#"><img src="static/images/morebtn.jpg" alt="" border="0" /></a></p>
-
-      </div>
-
-</div>
-
+    </div>
 </body>
+
 </html>

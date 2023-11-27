@@ -29,6 +29,7 @@
 
   <div class="card-container">
     {% for category in category_list %}
+    <a href="{% url 'courses:category-detail' category.id %}" class="card-link">
       <div class="card">
         <div class="top-section">
           <div class="border"></div>

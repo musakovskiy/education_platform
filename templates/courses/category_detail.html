@@ -1,104 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Category Detail</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f2f2f2;
-      margin: 0;
-      padding: 0;
-    }
-
-    .category-container {
-      background-color: #fff;
-      border: 2px solid #ddd;
-      border-radius: 10px;
-      padding: 20px;
-      margin: 20px;
-    }
-
-    .category-header {
-      background-color: #333;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-      border-radius: 10px 10px 0 0;
-    }
-
-    .course-container {
-      margin-bottom: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-
-    .course-box {
-      border: 2px solid #333;
-      border-radius: 10px;
-      padding: 20px;
-      margin: 10px 0;
-      background-color: #fff;
-      width: 10cm;
-      height: 10cm;
-      overflow: hidden;
-      position: relative;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .course-box:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    }
-
-    .course-box h3, .course-box p {
-      margin: 0;
-      font-family: 'Times New Roman', serif;
-    }
-
-    .course-box p {
-      font-style: italic;
-      color: #555;
-      margin-bottom: 10px;
-    }
-
-    .course-link-button {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      display: inline-block;
-      padding: 8px 12px;
-      background-color: #333;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      font-family: 'Arial', sans-serif;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    .course-link-button:hover {
-      background-color: #555;
-      color: #fff;
-    }
-
-    .back-button {
-      margin-top: 20px;
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #333;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      font-family: 'Arial', sans-serif;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    .back-button:hover {
-      background-color: #555;
-      color: #fff;
-    }
-  </style>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/categorydetail.css' %}">
 </head>
+
 <body>
 
   <div class="category-container">
@@ -124,4 +32,5 @@
   </div>
 
 </body>
+
 </html>

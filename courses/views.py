@@ -78,7 +78,7 @@ class CourseDeleteView(LoginRequiredMixin, generic.DeleteView):
 class UserCreateView(generic.CreateView):
     form_class = UserCreateForm
     template_name = 'registration/register.html'
-    success_url = '/'  # Make sure this is the correct URL
+    success_url = reverse_lazy('categories')
 
     def form_valid(self, form):
         print("Form is valid")
