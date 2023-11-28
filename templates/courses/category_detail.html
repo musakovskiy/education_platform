@@ -225,97 +225,42 @@ http://www.templatemo.com/tm-475-holiday
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-					<div class="tm-tours-box-1">
-						<img src="/static/details/img/tours-03.jpg" alt="image" class="img-responsive">
-						<div class="tm-tours-box-1-info">
-							<div class="tm-tours-box-1-info-left">
-								<p class="text-uppercase margin-bottom-20">Proin Gravida Nibhvel Lorem Quis Bind</p>
-								<p class="gray-text">28 March 2084</p>
-							</div>
-							<div class="tm-tours-box-1-info-right">
-								<p class="gray-text tours-1-description">Lorem quis bibendum auctor, nisi elit consequat ipsum, sec sagittis sem nibh id elit.</p>
-							</div>
-						</div>
-						<div class="tm-tours-box-1-link">
-							<div class="tm-tours-box-1-link-left">
-								Duration: 8 days
-							</div>
-							<a href="#" class="tm-tours-box-1-link-right">
-								$2,200
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-					<div class="tm-tours-box-1">
-						<img src="/static/details/img/tours-04.jpg" alt="image" class="img-responsive">
-						<div class="tm-tours-box-1-info">
-							<div class="tm-tours-box-1-info-left">
-								<p class="text-uppercase margin-bottom-20">Proin Gravida Nibhvel Lorem Quis Bind</p>
-								<p class="gray-text">26 March 2084</p>
-							</div>
-							<div class="tm-tours-box-1-info-right">
-								<p class="gray-text tours-1-description">Lorem quis bibendum auctor, nisi elit consequat ipsum, sec sagittis sem nibh id elit.</p>
-							</div>
-						</div>
-						<div class="tm-tours-box-1-link">
-							<div class="tm-tours-box-1-link-left">
-								Duration: 9 days
-							</div>
-							<a href="#" class="tm-tours-box-1-link-right">
-								$1,800
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-					<div class="tm-tours-box-1">
-						<img src="/static/details/img/tours-05.jpg" alt="image" class="img-responsive">
-						<div class="tm-tours-box-1-info">
-							<div class="tm-tours-box-1-info-left">
-								<p class="text-uppercase margin-bottom-20">Proin Gravida Nibhvel Lorem Quis Bind</p>
-								<p class="gray-text">24 March 2084</p>
-							</div>
-							<div class="tm-tours-box-1-info-right">
-								<p class="gray-text tours-1-description">Lorem quis bibendum auctor, nisi elit consequat ipsum, sec sagittis sem nibh id elit.</p>
-							</div>
-						</div>
-						<div class="tm-tours-box-1-link">
-							<div class="tm-tours-box-1-link-left">
-								Duration: 8 days
-							</div>
-							<a href="#" class="tm-tours-box-1-link-right">
-								$1,600
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-					<div class="tm-tours-box-1">
-						<img src="/static/details/img/tours-06.jpg" alt="image" class="img-responsive">
-						<div class="tm-tours-box-1-info">
-							<div class="tm-tours-box-1-info-left">
-								<p class="text-uppercase margin-bottom-20">Proin Gravida Nibhvel Lorem Quis Bind</p>
-								<p class="gray-text">22 March 2084</p>
-							</div>
-							<div class="tm-tours-box-1-info-right">
-								<p class="gray-text tours-1-description">Lorem quis bibendum auctor, nisi elit consequat ipsum, sec sagittis sem nibh id elit.</p>
-							</div>
-						</div>
-						<div class="tm-tours-box-1-link">
-							<div class="tm-tours-box-1-link-left">
-								Duration: 5 days
-							</div>
-							<a href="#" class="tm-tours-box-1-link-right">
-								$1,200
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
+                {% for course in object.course_set.all %}
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xxs-12">
+                    <div class="tm-tours-box-2">
+                        <!-- Add your course details here -->
+                        <img src="/static/details/img/your-course-image.jpg" alt="image" class="img-responsive">
+                        <div class="tm-tours-box-2-info">
+                            <h3 class="margin-bottom-15">{{ course.title }}</h3>
+                            <!-- Additional course details -->
+                            <p><strong>{{ course.owner }}</strong></p>
+							<br>
+                            <p>Тип навчання: {{ course.teaching }}</p>
+							<br>
+                            <p>{{ course.description }}</p>
+                        </div>
+                        <a href="{{ course.url }}" class="tm-tours-box-2-link" target="_blank">Перехід на сторінку курсів</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
 		</div>
 	</section>
+    <br>
+ <!-- "Go to Top" button -->
+<div class="tm-scroll-up" style="text-align: center; margin-top: 20px;">
+  <a href="#top" class="tm-scroll-up-link" style="text-decoration: none; color: #333; background-color: #f8f8f8; padding: 10px 15px; border-radius: 5px; display: inline-block;">
+    <i class="fa fa-chevron-up"></i> Повернутись на початок сторінки
+  </a>
+</div>
+<br>
+
+<!-- "Go Back" button -->
+<div class="tm-go-back" style="text-align: center; margin-top: 20px;">
+  <a href="javascript:history.back()" class="tm-go-back-link" style="text-decoration: none; color: #fff; background-color: #333; padding: 10px 15px; border-radius: 5px; display: inline-block;">
+    <i class="fa fa-chevron-left"></i> Повернутись у вибір категорій
+  </a>
+</div>
 
 	<!-- white bg -->
 	<section class="tm-white-bg section-padding-bottom">
@@ -336,7 +281,7 @@ http://www.templatemo.com/tm-475-holiday
 							<img src="/static/details/img/rating.png" alt="image" class="margin-bottom-5">
 							<p>28 March 2084</p>
 						</div>
-						<a href="#" class="tm-tours-box-2-link">Book Now</a>
+						<a href="#" class="tm-tours-box-2-link">Перехід на сторінку курсів</a>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xxs-12">
@@ -347,7 +292,7 @@ http://www.templatemo.com/tm-475-holiday
 							<img src="/static/details/img/rating.png" alt="image" class="margin-bottom-5">
 							<p>26 March 2084</p>
 						</div>
-						<a href="#" class="tm-tours-box-2-link">Book Now</a>
+						<a href="#" class="tm-tours-box-2-link">Перехід на сторінку курсів</a>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xxs-12">
@@ -358,7 +303,7 @@ http://www.templatemo.com/tm-475-holiday
 							<img src="/static/details/img/rating.png" alt="image" class="margin-bottom-5">
 							<p>24 March 2084</p>
 						</div>
-						<a href="#" class="tm-tours-box-2-link">Book Now</a>
+						<a href="#" class="tm-tours-box-2-link">Перехід на сторінку курсів</a>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xxs-12">
@@ -369,11 +314,28 @@ http://www.templatemo.com/tm-475-holiday
 							<img src="/static/details/img/rating.png" alt="image" class="margin-bottom-5">
 							<p>22 March 2084</p>
 						</div>
-						<a href="#" class="tm-tours-box-2-link">Book Now</a>
+						<a href="#" class="tm-tours-box-2-link">Перехід на сторінку курсів</a>
 					</div>
 				</div>
 			</div>
 
 
  </body>
+
+<br>
+ <!-- "Go to Top" button -->
+<div class="tm-scroll-up" style="text-align: center; margin-top: 20px;">
+  <a href="#top" class="tm-scroll-up-link" style="text-decoration: none; color: #333; background-color: #f8f8f8; padding: 10px 15px; border-radius: 5px; display: inline-block;">
+    <i class="fa fa-chevron-up"></i> Повернутись на початок сторінки
+  </a>
+</div>
+<br>
+
+<!-- "Go Back" button -->
+<div class="tm-go-back" style="text-align: center; margin-top: 20px;">
+  <a href="javascript:history.back()" class="tm-go-back-link" style="text-decoration: none; color: #fff; background-color: #333; padding: 10px 15px; border-radius: 5px; display: inline-block;">
+    <i class="fa fa-chevron-left"></i> Повернутись у вибір категорій
+  </a>
+</div>
+
  </html>
