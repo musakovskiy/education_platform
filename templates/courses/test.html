@@ -1,44 +1,26 @@
-<div class="card-container">
-    {% for category in category_list %}
-    <a href="{% url 'courses:category-detail' category.id %}" class="card-link">
-      <div class="card">
-        <div class="top-section">
-          <div class="border"></div>
-          <div class="icons">
-            <div class="logo">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 94 94" class="svg">
-                <!-- Your logo path data -->
-              </svg>
-            </div>
-            <div class="social-media">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" class="svg">
-                <!-- Your social media icon path data -->
-              </svg>
-              <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <!-- Your social media icon path data -->
-              </svg>
-              <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-                <!-- Your social media icon path data -->
-              </svg>
-            </div>
+<!-- templates/category_detail.html -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/categorydetail.css' %}">
+  </head>
+  <body>
+    <div class="card-container">
+    {% for course in object.course_set.all %}
+      <a href="{{ course.url }}">
+        <div class="card">
+          <div class="card-image" style="background-image: url('{{ course.media_file.url }}');"></div>
+          <div class="card-text">
+            <span class="date">{{ course.teaching }}</span>
+            <h2>{{ course.title }}</h2>
+            <p>{{ course.description }}</p>
           </div>
         </div>
-        <div class="bottom-section">
-          <span class="title" >{{ category.name }}</span>
-          <div class="row row1">
-            <div class="item">
-              <span class="big-text">2626</span>
-              <span class="regular-text">UI elements</span>
-            </div>
-            <div class="item">
-              <span class="big-text">100%</span>
-              <span class="regular-text">Free for use</span>
-            </div>
-            <div class="item">
-              <span class="big-text">38,631</span>
-              <span class="regular-text">Contributors</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      </a>
     {% endfor %}
+  </div>
+  </body>
+</html>
