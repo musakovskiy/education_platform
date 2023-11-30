@@ -15,6 +15,12 @@
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <title>Courses</title>
+    <style>
+    .course-image {
+        max-height: 200px; /* Set your desired height */
+        width: auto; /* Maintain aspect ratio */
+    }
+    </style>
 </head>
 
 <body id="home">
@@ -55,14 +61,13 @@
             </div>
             <div id="ourserv">
                 {% for course in object.course_set.all %}
-                <article>
-                    <h1>{{ course.title }}</h1>
-                    <img src="{{ course.media_file.url }}" alt="" />
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra
-                        gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet.</p>
-                    <a href="#" class="rm">Read More</a>
-                </article>
-                {% endfor %}
+                 <article>
+                     <h1>{{ course.title }}</h1>
+                     <img class="course-image" src="{{ course.media_file.url }}" alt="" />
+                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet.</p>
+                     <a href="#" class="rm">Read More</a>
+                 </article>
+                 {% endfor %}
                 <!-- Other service articles -->
             </div>
             <div id="sline">
