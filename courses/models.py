@@ -17,7 +17,7 @@ class Category(models.Model):
 class Course(models.Model):
     title = models.CharField(max_length=255)
     owner = models.CharField(max_length=255)
-    media_file = models.ImageField(upload_to='media/', blank=True)
+    media_file = models.ImageField(upload_to='media/',  blank=True)
     url = models.URLField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     teaching = models.CharField(max_length=255)
