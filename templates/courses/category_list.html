@@ -2,92 +2,183 @@
 <html lang="en">
 
 <head>
-  <title>Categories</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  {% load static %}
-  <link rel="stylesheet" href="{% static 'css/category.css' %}">
-  <link rel="stylesheet" href="{% static 'css/categorylisttitle.css' %}">
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #3494e6, #ec6ead); /* Adjust gradient colors as needed */
-      color: #fff; /* Adjust the text color based on your background */
-    }
+    <title>info</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    h1 {
-      text-align: center;
-      margin-top: 50px;
-      padding: 20px;
-      background: linear-gradient(to right, #3494e6, #ec6ead); /* Same gradient as the body */
-      border-radius: 10px;
-    }
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/categorylist.css' %}">
 
-    .card-container {
-      display: flex;
-      gap: 20px;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      padding: 20px;
-    }
-  </style>
+    <style>
+        /* Add these styles at the end of your existing CSS */
+        .category_title {
+            font-size: 24px;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        .categories {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0 0;
+        }
+
+        .categories li {
+            margin-bottom: 5px;
+        }
+
+        .categories a {
+            text-decoration: none;
+            color: #94ff80;
+            font-weight: bold;
+            font-size: 18px;
+            display: block;
+        }
+
+        .categories a:hover {
+            color: #fff;
+        }
+        * {
+	box-sizing: border-box;
+}
+button {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	background: #999;
+}
+
+a {
+	border-radius: 12px;
+	border: 3px outset #888;
+	position: relative;
+	display: inline-block;
+	padding: 15px 30px;
+	color: #eee;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	overflow: hidden;
+
+	box-shadow: 0 0 10px rgb(0, 0, 0, 1);
+	font-family: verdana;
+	font-size: 28px;
+	font-weight: bolder;
+	text-decoration: none;
+	background:linear-gradient(160deg, #666, #444);
+	text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+
+	transition: 0.2s;
+
+}
+a:active {
+	border: 3px outset #ddd;
+	color: #fff;
+	background: linear-gradient(160deg, #666, #444);
+	text-shadow: 0px 0px 4px #ccc;
+	box-shadow: 0 0 10px #fff, 0 0 40px #fff, 0 0 80px #fff;
+	transition-delay: 1s;
+}
+
+a span {
+	position: absolute;
+	display: block;
+}
+
+a span:nth-child(1) {
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 2px;
+	background: linear-gradient(90deg, transparent, #eee);
+}
+a:active span:nth-child(1) {
+	left: 100%;
+	transition: 1s;
+}
+a span:nth-child(2) {
+	top: -100%;
+	right: 0;
+	width: 2px;
+	height: 100%;
+	background: linear-gradient(180deg, transparent, #eee);
+}
+a:active span:nth-child(2) {
+	top: 100%;
+	transition: 1s;
+	transition-delay: 0.25s;
+}
+a span:nth-child(3) {
+	bottom: 0;
+	right: -100%;
+	width: 100%;
+	height: 2px;
+	background: linear-gradient(270deg, transparent, #eee);
+}
+a:active span:nth-child(3) {
+	right: 100%;
+	transition: 1s;
+	transition-delay: 0.5s;
+}
+
+a span:nth-child(4) {
+	bottom: -100%;
+	left: 0;
+	width: 2px;
+	height: 100%;
+	background: linear-gradient(360deg, transparent, #eee);
+}
+a:active span:nth-child(4) {
+	bottom: 100%;
+	transition: 1s;
+	transition-delay: 0.75s;
+}
+
+    </style>
+
 </head>
 
 <body>
-  <h1 class="styletitle">Список категорій курсів</h1>
-<br>
-<br>
-<br>
-
-
-  <div class="card-container">
-    {% for category in category_list %}
-    <a href="{% url 'courses:category-detail' category.id %}" class="card-link">
-      <div class="card">
-        <div class="top-section">
-          <div class="border"></div>
-          <div class="icons">
-            <div class="logo">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 94 94" class="svg">
-                <!-- Your logo path data -->
-              </svg>
+    <div class="main">
+        <div class="headerbg">
+            <div class="logo_area">
+                <p class="logoicon"><img src="{% static 'images/logoicon.jpg' %}" alt="" border="0" /></p>
+                <p>created by Musakovskiy Olexandr</p>
             </div>
-            <div class="social-media">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" class="svg">
-                <!-- Your social media icon path data -->
-              </svg>
-              <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <!-- Your social media icon path data -->
-              </svg>
-              <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-                <!-- Your social media icon path data -->
-              </svg>
+
+            <div class="improve_text">
+                Безкоштовна Інформаційно <span class="white_text"></span><br />
+                Освітня Платформа
+
+                <br>
+                <div class="category_title">Перелік Категорій</div>
+
+                <br>
+                <br>
+                <br>
+
+                {% for category in category_list %}
+                   <ul>
+                       <button>
+	                        <a href="{% url 'courses:category-detail' category.id %}">{{ category.name }}
+                                <br>
+		                        <span></span>
+		                        <span></span>
+		                        <span></span>
+		                        <span></span>
+	                        </a>
+                        </button>
+                   </ul>
+                {% endfor %}
+
+                    <!-- Add more categories as needed -->
+
             </div>
-          </div>
         </div>
-        <div class="bottom-section">
-          <span class="title">{{ category.name }}</span>
-          <div class="row row1">
-            <div class="item">
-              <span class="big-text">2626</span>
-              <span class="regular-text">UI elements</span>
-            </div>
-            <div class="item">
-              <span class="big-text">100%</span>
-              <span class="regular-text">Free for use</span>
-            </div>
-            <div class="item">
-              <span class="big-text">38,631</span>
-              <span class="regular-text">Contributors</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    {% endfor %}
-  </div>
-
+    </div>
 </body>
 
 </html>
