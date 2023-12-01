@@ -1,84 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #ffdddd;
+        /* Add your existing styles here */
+
+        .spacer {
+            line-height: 0;
+            font-size: 0;
+            clear: both;
+        }
+
+        div, h1, h2, h3, h4, span, ul, li, p, a, textarea, input, label, img, form {
             margin: 0;
             padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
         }
 
-        form {
-            background-color: #ffeeee;
+        body {
+            background: #e7e7e7 url(../images/backbg.jpg) 0 0 repeat-x;
+            font: normal 11px/18px Tahoma, Arial, Helvetica, sans-serif;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            width: 850px;
+            margin: 0 auto;
+        }
+
+        .bodybg {
+            background: url(../images/bodybg.jpg) 0 0 no-repeat;
+            width: 850px;
+            float: left;
+        }
+
+        .welcometext_area {
+            width: 430px;
+            float: left;
+            padding: 22px 0 10px 99px;
+        }
+
+        .welcome_text {
+            font: normal 40px Georgia, "Times New Roman", Times, serif;
+            color: #fff;
+        }
+
+        .bluetext {
+            font: normal 30px/25px Georgia, "Times New Roman", Times, serif;
+            color: #00374b;
+        }
+
+        .contenttext {
+            width: 800px;
+            float: left;
+            color: #fff;
+            font: normal 11px/18px Tahoma, Arial, Helvetica, sans-serif;
+            padding-left: 23px;
+            padding-bottom: 10px;
+        }
+
+        .login-form {
+            max-width: 300px;
+            margin: 0 auto;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
 
-        h1 {
-            text-align: center;
-            color: #cc0000;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            color: #cc0000;
-        }
-
-        input {
+        .login-form input {
             width: 100%;
             padding: 10px;
             margin-bottom: 15px;
             box-sizing: border-box;
-            border: 1px solid #cc0000;
-            border-radius: 4px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-form button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
             font-size: 16px;
         }
 
-        input[type="submit"] {
-            background-color: #cc0000;
-            color: white;
+        .login-form button:hover {
+            background-color: #2980b9;
+        }
+
+        .register-btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #00bfff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
             cursor: pointer;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #990000;
-        }
-
-        p {
-            color: #cc0000;
+            font-size: 16px;
             margin-top: 10px;
+            text-decoration: none;
+        }
+
+        .register-btn:hover {
+            background-color: #0091ea;
         }
     </style>
 </head>
+
 <body>
-
-    <form method="post" action="{% url 'login' %}">
-        {% csrf_token %}
-        <h1>Login</h1>
-
-        {% if error_message %}
-            <p>{{ error_message }}</p>
-        {% endif %}
-
-        <label for="id_username">Username:</label>
-        <input type="text" name="username" required id="id_username">
-
-        <label for="id_password">Password:</label>
-        <input type="password" name="password" required id="id_password">
-
-        <input type="submit" value="Login">
-    </form>
-
+    <div class="main">
+        <div class="bodybg">
+            <div class="welcometext_area">
+                <p class="welcome_text">Ласкаво просимо! Увійдіть в свій акаунт</p>
+                <br>
+                <form method="post" class="login-form">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="shadow__btn">Увійти</button>
+                </form>
+                <a href="{% url 'courses:register' %}" class="register-btn">Реєстрація</a>
+                <p class="bluetext">Швидка та безкоштовна реєстрація</p>
+            </div>
+            <p class="contenttext">На цій платформі ми зібрали посилання на найкращі курси для вашого розвитку.</p>
+        </div>
+    </div>
 </body>
+
 </html>

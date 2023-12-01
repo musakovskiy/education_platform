@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -7,7 +8,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <style>
     body {
-      background-color: #f8f9fa;
+      background-color: #e7e7e7;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -16,16 +17,16 @@
     }
 
     .form-container {
-      background-color: #1a1a1a;
-      border-radius: 20px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
       padding: 30px;
       width: 400px;
+      text-align: center;
     }
 
     h2 {
-      color: #00bfff;
-      text-align: center;
+      color: #00374b;
       margin-bottom: 20px;
     }
 
@@ -36,20 +37,21 @@
     }
 
     label {
-      color: #fff;
+      color: #00374b;
+      text-align: left;
     }
 
     input {
-      background-color: #333;
-      color: #fff;
+      background-color: #e0e0e0;
+      color: #00374b;
       padding: 15px;
       outline: 0;
-      border: 1px solid rgba(105, 105, 105, 0.397);
-      border-radius: 10px;
+      border: 1px solid #00374b;
+      border-radius: 5px;
     }
 
     input + span {
-      color: rgba(255, 255, 255, 0.5);
+      color: #00374b;
       font-size: 0.9em;
     }
 
@@ -70,25 +72,25 @@
       border: none;
       outline: none;
       padding: 15px;
-      border-radius: 10px;
+      border-radius: 5px;
       color: #fff;
       font-size: 16px;
-      background-color: #00bfff;
+      background-color: #00374b;
       cursor: pointer;
     }
 
     .submit:hover {
-      background-color: #00bfff96;
+      background-color: #006fa0;
     }
 
     .signin {
       text-align: center;
       margin-top: 20px;
-      color: rgba(255, 255, 255, 0.7);
+      color: #00374b;
     }
 
     .signin a:hover {
-      text-decoration: underline royalblue;
+      text-decoration: underline;
     }
 
     .signin a {
@@ -96,6 +98,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="form-container">
     <h2>Register</h2>
@@ -116,11 +119,12 @@
       <button type="submit" class="submit">Register</button>
     </form>
     <div class="signin">
-      <span>Already have an account? <a href="{% url 'login' %}">Sign In</a></span>
+      <span>Already have an account? <a href="{% url 'login' %}">Log In</a></span>
     </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
+
 </html>
