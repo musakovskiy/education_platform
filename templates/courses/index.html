@@ -28,14 +28,14 @@
             <div class="welcometext_area">
                 <p class="welcome_text">Найбільший каталог онлайн та офлайн курсів для навчання </p>
                 <br>
-                {% if user.is_authenticated %}
-                    <!-- Add the button for logged-in users -->
-                    <a href="{% url 'courses:category-list' %}" class="shadow__btn">список курсів</a>
-                    <a href="{% url 'logout' %}" class="shadow__btn">Вийти</a>
-                {% else %}
-                    <a href="{% url 'login' %}" class="shadow__btn">Увійти</a>
-                    <a href="{% url 'courses:register' %}" class="shadow__btn">Реєстрація</a>
-                {% endif %}
+               {% if user.is_authenticated %}
+                 <!-- Add the button for logged-in users -->
+                 <a href="{% url 'courses:category-list' %}" class="shadow__btn course-list-btn">список курсів</a>
+                 <a href="{% url 'logout' %}" class="shadow__btn">Вийти</a>
+               {% else %}
+                 <a href="{% url 'login' %}" class="shadow__btn register-btn">Увійти</a>
+                 <a href="{% url 'courses:register' %}" class="shadow__btn register-btn">Реєстрація</a>
+               {% endif %}
                 <br>
                 <br>
                 <p class="bluetext">Швидка та безкоштовна реєстрація</p>
