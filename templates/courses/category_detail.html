@@ -20,6 +20,24 @@
         max-height: 200px; /* Set your desired height */
         width: auto; /* Maintain aspect ratio */
     }
+    .btn-arrow {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007BFF; /* Set your desired background color */
+        color: #fff; /* Set your desired text color */
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .btn-arrow:hover {
+        background-color: #0056b3; /* Set your desired hover background color */
+    }
+
+    .btn-arrow span {
+        margin-left: 10px;
+    }
+
     </style>
 </head>
 
@@ -29,7 +47,7 @@
         <!-- L O G O & N A V B A R -->
         <header>
             <div id="logo">
-                <h1>Навчально інформаційна платформа<span id="iisrt"><span id="ii"></span> <span id="srt"></span></h1>
+                <h1>Навчально інформаційна платформа</h1>
                 <div id="tagline">
                     <br>
                     <h2>by Musakovskiy Olexandr</h2>
@@ -62,11 +80,12 @@
             </div>
             <div id="ourserv">
                 {% for course in object.course_set.all %}
-                 <article>
-                     <h1>{{ course.title }}</h1>
+                 <article >
+                     <h1>{{ course.owner }}</h1>
                      <img class="course-image" src="{{ course.media_file.url }}" alt="" />
-                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet.</p>
-                     <a href="#" class="rm">Read More</a>
+                     <p>{{ course.description }}</p>
+
+                     <a href="{{ course.url }}" class="btn-arrow">Перейти на сайт курсу </a>
                  </article>
                  {% endfor %}
                 <!-- Other service articles -->
