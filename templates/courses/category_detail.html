@@ -16,55 +16,77 @@
     <![endif]-->
     <title>Courses</title>
     <style>
-    .course-image {
-        max-height: 200px; /* Set your desired height */
-        width: auto; /* Maintain aspect ratio */
-    }
-    .btn-arrow {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #007BFF; /* Set your desired background color */
-        color: #fff; /* Set your desired text color */
-        text-decoration: none;
-        border-radius: 5px;
-        transition: background-color 0.3s;
-    }
+        .course-image {
+            max-height: 200px; /* Set your desired height */
+            width: auto; /* Maintain aspect ratio */
+        }
 
-    .btn-arrow:hover {
-        background-color: #0056b3; /* Set your desired hover background color */
-    }
+        .btn-arrow {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF; /* Set your desired background color */
+            color: #fff; /* Set your desired text color */
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
 
-    .btn-arrow span {
-        margin-left: 10px;
-    }
+        .btn-arrow:hover {
+            background-color: #0056b3; /* Set your desired hover background color */
+        }
 
+        .btn-arrow span {
+            margin-left: 10px;
+        }
+
+        .category-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF; /* Set your desired background color */
+            color: #fff; /* Set your desired text color */
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-bottom: 20px; /* Add margin for spacing */
+        }
+
+        .category-btn span {
+            margin-left: 10px;
+        }
+
+        .category-btn:hover {
+            background-color: #0056b3; /* Set your desired hover background color */
+        }
+
+        /* Style to make the text yellow */
+        #logo h1 {
+            color: yellow;
+        }
     </style>
 </head>
 
 <body id="home">
     <div id="wrapper">
-
         <!-- L O G O & N A V B A R -->
         <header>
             <div id="logo">
-                <h1>Навчально інформаційна платформа</h1>
+                <h1>Безкоштовна Інформаційно освітня платформа</h1>
                 <div id="tagline">
                     <br>
                     <h2>by Musakovskiy Olexandr</h2>
                 </div>
             </div>
-
         </header>
 
         <!-- T H E S L I D E R -->
         <div class="slider-wrapper theme-default">
-             <div id="slider" class="nivoSlider">
-                 <img src="{% static 'details/images/slide1.jpg' %}" alt="" />
-                 <img src="{% static 'details/images/slide2.jpg' %}" alt="" />
-                 <img src="{% static 'details/images/slide3.jpg' %}" alt="" />
-                 <img src="{% static 'details/images/slide4.jpg' %}" alt="" />
-             </div>
-         </div>
+            <div id="slider" class="nivoSlider">
+                <img src="{% static 'details/images/slide1.jpg' %}" alt="" />
+                <img src="{% static 'details/images/slide2.jpg' %}" alt="" />
+                <img src="{% static 'details/images/slide3.jpg' %}" alt="" />
+                <img src="{% static 'details/images/slide4.jpg' %}" alt="" />
+            </div>
+        </div>
         <script type="text/javascript">
             $(window).load(function () {
                 $('#slider').nivoSlider({ pauseTime: 6000 });
@@ -80,15 +102,13 @@
             </div>
             <div id="ourserv">
                 {% for course in object.course_set.all %}
-                 <article >
-                     <h1>{{ course.owner }}</h1>
-                     <img class="course-image" src="{{ course.media_file.url }}" alt="" />
-                     <p>{{ course.description }}</p>
-
-                     <a href="{{ course.url }}" class="btn-arrow">Перейти на сайт курсу </a>
-                 </article>
-                 {% endfor %}
-                <!-- Other service articles -->
+                    <article>
+                        <h1>{{ course.owner }}</h1>
+                        <img class="course-image" src="{{ course.media_file.url }}" alt="" />
+                        <p>{{ course.description }}</p>
+                        <a href="{{ course.url }}" class="btn-arrow">Перейти на сайт курсу </a>
+                    </article>
+                {% endfor %}
             </div>
             <div id="sline">
                 <div class="sdline"></div>
@@ -103,32 +123,39 @@
                     <a href="#" class="rm">Read More</a>
                 </article>
                 <article>
-                    <h1>Реклама 2</h1>
-                    <img src="{% static 'details/images/1s.jpg' %}" alt="" />
-                    <p>Тут може бути ваша реклама</p>
-                    <a href="#" class="rm">Read More</a>
-                </article>
-                <article>
-                    <h1>Реклма 3</h1>
+                    <h1>Реклама 1</h1>
                     <img src="{% static 'details/images/1s.jpg' %}" alt="" />
                     <p>тут може бути ваша реклама</p>
                     <a href="#" class="rm">Read More</a>
                 </article>
                 <article>
-                    <h1>Реклама 4</h1>
+                    <h1>Реклама 1</h1>
+                    <img src="{% static 'details/images/1s.jpg' %}" alt="" />
+                    <p>тут може бути ваша реклама</p>
+                    <a href="#" class="rm">Read More</a>
+                </article>
+                <article>
+                    <h1>Реклама 1</h1>
                     <img src="{% static 'details/images/1s.jpg' %}" alt="" />
                     <p>тут може бути ваша реклама</p>
                     <a href="#" class="rm">Read More</a>
                 </article>
                 <!-- Other project articles -->
             </div>
+            <br>
         </section>
 
         <!-- T H E F O O T E R -->
-
-
+        <button onclick="goToCategories()" class="btn-arrow category-btn"><span>&rarr;</span>До вибору категорій</button>
     </div>
-    </div>
+
+    <!-- Add this script at the end of the body tag -->
+    <script>
+        function goToCategories() {
+            // Change the URL to the actual URL of your category page
+            window.location.href = "/categories/";
+        }
+    </script>
 </body>
 
 </html>
