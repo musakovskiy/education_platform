@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Register</title>
+  <title>Реєстрація</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <style>
     body {
@@ -101,7 +101,7 @@
 
 <body>
   <div class="form-container">
-    <h2>Register</h2>
+    <h2>Реєстрація</h2>
     <form method="post" action="{% url 'courses:register' %}">
       {% csrf_token %}
       <label>
@@ -116,10 +116,10 @@
         <input type="password" name="password2" placeholder="Confirm Password" required>
         <span>Confirm Password</span>
       </label>
-      <button type="submit" class="submit">Register</button>
+      <button type="submit" class="submit">Зареєструватись</button>
     </form>
     <div class="signin">
-      <span>Already have an account? <a href="{% url 'login' %}">Log In</a></span>
+      <span>Якщо ви вже зареєстровані? <a href="{% url 'login' %}">Log In</a></span>
     </div>
   </div>
 
