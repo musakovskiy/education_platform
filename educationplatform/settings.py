@@ -76,7 +76,7 @@ WSGI_APPLICATION = "educationplatform.wsgi.application"
 
 DATABASES = {
     'default': dj_database_url.config(
-        default="postgres://test_user:j7i2J592rbnywwvF1WRecWYkLE4qzEom@dpg-clvgofmd3nmc738cpv60-a.frankfurt-postgres.render.com/test_db_wegd",
+        default="postgres://test_user:jQXj4GZwDOUQ5cYW7YCVrNgSBc64cQnQ@dpg-cm006eud3nmc738hbpig-a/test_db_r413",
         conn_max_age=600
     )
 }
